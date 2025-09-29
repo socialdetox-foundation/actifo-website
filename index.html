@@ -1,67 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Download Our App</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-    .btn-download {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #4285f4;
-      color: white;
-      font-size: 1.2em;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .btn-download:hover {
-      background-color: #3367d6;
-    }
-    .info-text {
-      margin-top: 20px;
-      color: #666;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actifo - Your Smart Activity Partner</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #F0FDF4; }
+        .bg-brand-dark { background-color: #0F4C5C; }
+        .text-brand-dark { color: #0F4C5C; }
+        .bg-brand-primary { background-color: #0F7C8A; }
+        .hover\:bg-brand-primary-dark:hover { background-color: #0A6978; }
+        .hero-image-animation { animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    </style>
 </head>
-<body>
-  <h1>Welcome to Actifo</h1>
-  <p>Open the app to participate in the challenge or download it if you haven’t yet.</p>
-  
-  <a id="download-btn" href="https://play.google.com/store/apps/details?id=com.detoxapp.social" class="btn-download" target="_blank" rel="noopener noreferrer">
-    Download on Google Play
-  </a>
+<body class="text-gray-800">
 
-  <p class="info-text">If the app does not open automatically, please tap the button above.</p>
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                 <img src="coin.png" alt="Actifo Logo" class="h-10 w-10">
+                 <span class="text-2xl font-bold text-brand-dark">Actifo</span>
+            </a>
+            <a href="#download" class="bg-brand-primary text-white font-semibold px-5 py-2 rounded-lg hover:bg-brand-primary-dark transition duration-300">Download App</a>
+        </div>
+    </header>
 
-  <script>
-    (function() {
-      console.log('Landing page loaded.');
-      if (/Android/i.test(navigator.userAgent)) {
-        var appIntent = "intent://" + window.location.host + window.location.pathname + "#Intent;scheme=https;package=com.detoxapp.social;end";
-        console.log('Android device detected.');
-        console.log('Attempting to open app using intent URI:', appIntent);
-        window.location.href = appIntent;
+    <!-- Main Content -->
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 py-16 md:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Left Column: Text Content -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                        Activate Your Focus, <br class="hidden md:block"> <span class="text-brand-dark">Game On, Focus On.</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Actifo helps you organize, track, and optimize your daily tasks and goals seamlessly. Take control of your productivity today.
+                    </p>
+                    <!-- Download Buttons -->
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" id="app-store-link">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" class="h-12">
+                        </a>
+                        <a href="#" id="play-store-link">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1200px-Google_Play_Store_badge_EN.svg.png" alt="Get it on Google Play" class="h-12">
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Column: Image -->
+                <div class="flex justify-center">
+                    <img src="1 (1).jpg" alt="Actifo App Screenshot" class="max-w-xs md:max-w-sm rounded-2xl shadow-2xl hero-image-animation">
+                </div>
+            </div>
+        </section>
 
-        setTimeout(function() {
-          var playStoreUrl = "https://play.google.com/store/apps/details?id=com.detoxapp.social";
-          console.log('App did not open (likely not installed). Redirecting to Play Store:', playStoreUrl);
-          window.location.href = playStoreUrl;
-        }, 2000);
-      } else {
-        console.log('Non-Android device detected. No auto-redirect will be attempted.');
-      }
-    })();
-  </script>
+        <!-- Features Section -->
+        <section class="bg-white py-20 md:py-28">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">A Better Way to Stay Motivated</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-12">Here's how Actifo empowers you to achieve more.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Feature 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                         <img src="7 (1).jpg" alt="My Challenges Feature" class="rounded-lg shadow-md mb-6 w-full">
+                        <h3 class="text-xl font-semibold mb-2">Engaging Challenges</h3>
+                        <p class="text-gray-500">Participate in social and fitness challenges to stay motivated and earn rewards.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                        <img src="5.jpg" alt="Analytics Feature" class="rounded-lg shadow-md mb-6 w-full">
+                        <h3 class="text-xl font-semibold mb-2">Track Your Usage</h3>
+                        <p class="text-gray-500">Get detailed analytics on your screen time to build better digital habits.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                        <img src="8 (1).jpg" alt="Leaderboard Feature" class="rounded-lg shadow-md mb-6 w-full">
+                        <h3 class="text-xl font-semibold mb-2">Compete on Leaderboards</h3>
+                        <p class="text-gray-500">Compete with friends, climb the ranks, and see where you stand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- More features can go here -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white" id="download">
+        <div class="container mx-auto px-6 py-8">
+             <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p class="text-lg font-semibold">Actifo</p>
+                    <p class="text-sm text-gray-400">&copy; 2025 Actifo. All Rights Reserved.</p>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="about.html" class="text-gray-300 hover:text-white">About Us</a>
+                    <a href="privacy.html" class="text-gray-300 hover:text-white">Privacy Policy</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // App Redirect Logic
+        (function() {
+            // Configuration
+            const BASE_URL_SCHEME = 'actifo:/'; // NOTE the single slash
+            const IOS_APP_STORE_LINK = 'https://apps.apple.com/app/your-app-id'; 
+            const ANDROID_PLAY_STORE_LINK = 'https://play.google.com/store/apps/details?id=com.actifo.app';
+
+            // *** NEW: Get the path from the URL, like /qc/GdJWL4T7xKYQ ***
+            const path = window.location.pathname;
+            const fullAppUrl = BASE_URL_SCHEME + path;
+
+            function getOS() {
+                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                if (/android/i.test(userAgent)) return "Android";
+                if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) return "iOS";
+                return "unknown";
+            }
+
+            function redirectToStore(os) {
+                if (os === "iOS") {
+                    window.location.href = IOS_APP_STORE_LINK;
+                } else if (os === "Android") {
+                    window.location.href = ANDROID_PLAY_STORE_LINK;
+                }
+            }
+
+            function openAppOrRedirect() {
+                const os = getOS();
+                if (os === "unknown") return;
+                
+                // *** NEW: Immediately try to open the deep link if on mobile ***
+                if (os === 'iOS' || os === 'Android') {
+                    window.location.href = fullAppUrl;
+                }
+
+                setTimeout(function() {
+                    // If the user is still on this page after a short delay, redirect to the store.
+                    if (!document.hidden && !document.webkitHidden) {
+                         redirectToStore(os);
+                    }
+                }, 2500); // 2.5 second delay
+            }
+            
+            // For root domain, trigger immediately on page load
+             if (path === '/' || path === '/index.html') {
+                openAppOrRedirect();
+             }
+            
+            // Also trigger on button clicks
+            document.getElementById('app-store-link').addEventListener('click', (e) => { e.preventDefault(); openAppOrRedirect(); });
+            document.getElementById('play-store-link').addEventListener('click', (e) => { e.preventDefault(); openAppOrRedirect(); });
+        })();
+    </script>
+
 </body>
 </html>

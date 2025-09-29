@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download Our App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .btn-download {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #4285f4;
+      color: white;
+      font-size: 1.2em;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn-download:hover {
+      background-color: #3367d6;
+    }
+    .info-text {
+      margin-top: 20px;
+      color: #666;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Actifo</h1>
+  <p>Open the app to participate in the challenge or download it if you haven’t yet.</p>
+  
+  <a id="download-btn" href="https://play.google.com/store/apps/details?id=com.detoxapp.social" class="btn-download" target="_blank" rel="noopener noreferrer">
+    Download on Google Play
+  </a>
+
+  <p class="info-text">If the app does not open automatically, please tap the button above.</p>
+
+  <script>
+    (function() {
+      console.log('Landing page loaded.');
+      if (/Android/i.test(navigator.userAgent)) {
+        var appIntent = "intent://" + window.location.host + window.location.pathname + "#Intent;scheme=https;package=com.detoxapp.social;end";
+        console.log('Android device detected.');
+        console.log('Attempting to open app using intent URI:', appIntent);
+        window.location.href = appIntent;
+
+        setTimeout(function() {
+          var playStoreUrl = "https://play.google.com/store/apps/details?id=com.detoxapp.social";
+          console.log('App did not open (likely not installed). Redirecting to Play Store:', playStoreUrl);
+          window.location.href = playStoreUrl;
+        }, 2000);
+      } else {
+        console.log('Non-Android device detected. No auto-redirect will be attempted.');
+      }
+    })();
+  </script>
+</body>
+</html>
