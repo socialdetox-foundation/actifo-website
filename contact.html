@@ -1,65 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Actifo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #F0FDF4;
-        }
-        .bg-brand-dark { background-color: #0F4C5C; }
-        .text-brand-dark { color: #0F4C5C; }
-        .bg-brand-primary { background-color: #0F7C8A; }
-        .hover\:bg-brand-primary-dark:hover { background-color: #0A6978; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Actifo</title>
+<meta name="description" content="Questions, feedback or support — here's how to reach the Actifo team.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="text-gray-800">
+<body class="antialiased">
 
-    <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                 <img src="coin.png" alt="Actifo Logo" class="h-10 w-10">
-                 <span class="text-2xl font-bold text-brand-dark">Actifo</span>
-            </a>
-            <a href="index.html#download" class="bg-brand-primary text-white font-semibold px-5 py-2 rounded-lg hover:bg-brand-primary-dark transition duration-300">Download App</a>
-        </div>
-    </header>
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="assets/coin.png" alt="" class="h-9 w-9">
+      <span class="logo-word">actifo</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html#story" class="nav-link">The idea</a>
+      <a href="index.html#rewards" class="nav-link">Rewards</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+    </nav>
+    <div class="hidden md:block">
+      <a href="https://play.google.com/store/apps/details?id=com.actifov1" target="_blank" rel="noopener" class="btn btn-primary">Get the app</a>
+    </div>
+    <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu md:hidden gap-1 px-6 pb-5 bg-[var(--paper)] border-t border-[var(--line)]">
+    <a href="index.html#story" class="py-2.5 font-medium text-[var(--teal-950)]">The idea</a>
+    <a href="index.html#rewards" class="py-2.5 font-medium text-[var(--teal-950)]">Rewards</a>
+    <a href="privacy.html" class="py-2.5 font-medium text-[var(--teal-950)]">Privacy</a>
+    <a href="https://play.google.com/store/apps/details?id=com.actifov1" target="_blank" rel="noopener" class="btn btn-primary mt-2 w-full">Get the app</a>
+  </div>
+</header>
 
-    <main class="pt-32 pb-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto bg-white rounded-lg p-8 md:p-12 shadow-xl text-center">
-                <h1 class="text-4xl font-extrabold text-brand-dark">Get in Touch</h1>
-                <p class="mt-4 text-xl text-gray-600">We'd love to hear from you! Whether you have a question, feedback, or need support, our team is here to help.</p>
-                <div class="mt-8">
-                    <a href="mailto:socialdetox.foundation@gmail.com" class="inline-block bg-brand-primary text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-brand-primary-dark transition duration-300">
-                        socialdetox.foundation@gmail.com
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
+<main>
 
-    <footer class="bg-brand-dark text-white">
-        <div class="container mx-auto px-6 py-8">
-             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-4 md:mb-0">
-                    <p class="text-lg font-semibold">Actifo</p>
-                    <p class="text-sm text-gray-400">&copy; 2025 Actifo. All Rights Reserved.</p>
-                </div>
-                <div class="flex items-center space-x-6">
-                    <a href="about.html" class="text-gray-300 hover:text-white">About Us</a>
-                    <a href="privacy.html" class="text-gray-300 hover:text-white">Privacy Policy</a>
-                    <a href="contact.html" class="text-gray-300 hover:text-white">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <!-- ============ CONTACT ============ -->
+  <section class="pt-36 pb-24 md:pt-44 px-6">
+    <div class="max-w-lg mx-auto text-center" data-reveal>
+      <span class="hero-eyebrow">💬 Get in touch</span>
+      <h1 class="mt-5 text-4xl md:text-5xl text-[var(--teal-950)]">Let's talk.</h1>
+      <p class="mt-5 text-[#345C58] text-lg">
+        Question, feedback, or need a hand with something in the app? We'd love to hear from you.
+      </p>
+
+      <a
+        href="mailto:socialdetox.foundation@gmail.com"
+        class="break-safe block w-full mt-9 rounded-2xl bg-[var(--teal-700)] text-white font-bold text-base sm:text-lg px-6 py-5 sm:px-8 sm:py-6 transition duration-300 hover:bg-[var(--teal-800)]"
+        style="white-space:normal;"
+      >
+        socialdetox.foundation@gmail.com
+      </a>
+
+      <p class="mt-5 text-sm text-[#7D9994]">We typically reply within 2 business days.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[var(--teal-950)] text-white pt-16 pb-8 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-[1.4fr,1fr,1fr] gap-10">
+    <div>
+      <div class="flex items-center gap-2">
+        <img src="assets/coin.png" alt="" class="h-8 w-8">
+        <span class="logo-word text-white">actifo</span>
+      </div>
+      <p class="mt-3 text-sm text-[#BFE0DC] max-w-xs">Social Detox, Gamified. Turn your focus into your greatest asset.</p>
+    </div>
+    <div>
+      <p class="eyebrow text-[#8FC2BC] mb-3">Company</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow text-[#8FC2BC] mb-3">Get in touch</p>
+      <a href="mailto:socialdetox.foundation@gmail.com" class="text-sm break-safe">socialdetox.foundation@gmail.com</a>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-[var(--line-dark)] text-xs text-[#7FA9A3]">
+    &copy; 2026 Actifo. All rights reserved.
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
 
 </body>
 </html>

@@ -1,171 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actifo - Your Smart Activity Partner</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #F0FDF4; }
-        .bg-brand-dark { background-color: #0F4C5C; }
-        .text-brand-dark { color: #0F4C5C; }
-        .bg-brand-primary { background-color: #0F7C8A; }
-        .hover\:bg-brand-primary-dark:hover { background-color: #0A6978; }
-        .hero-image-animation { animation: float 4s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actifo — Your focus, rewarded.</title>
+<meta name="description" content="Actifo tracks your screen time, turns healthy habits into challenges you can win, and lets you cash real coins in for rewards.">
+
+<!-- Tailwind CDN: used only for layout/spacing utilities. All brand color/type/animation is custom below. -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="text-gray-800">
+<body class="antialiased">
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                 <img src="coin.png" alt="Actifo Logo" class="h-10 w-10">
-                 <span class="text-2xl font-bold text-brand-dark">Actifo</span>
-            </a>
-            <a href="#download" class="bg-brand-primary text-white font-semibold px-5 py-2 rounded-lg hover:bg-brand-primary-dark transition duration-300">Download App</a>
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="assets/coin.png" alt="" class="h-9 w-9">
+      <span class="logo-word">actifo</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html#story" class="nav-link">The idea</a>
+      <a href="index.html#rewards" class="nav-link">Rewards</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+    </nav>
+    <div class="hidden md:block">
+      <a href="https://play.google.com/store/apps/details?id=com.actifov1" target="_blank" rel="noopener" class="btn btn-primary">Get the app</a>
+    </div>
+    <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu md:hidden gap-1 px-6 pb-5 bg-[var(--paper)] border-t border-[var(--line)]">
+    <a href="index.html#story" class="py-2.5 font-medium text-[var(--teal-950)]">The idea</a>
+    <a href="index.html#rewards" class="py-2.5 font-medium text-[var(--teal-950)]">Rewards</a>
+    <a href="privacy.html" class="py-2.5 font-medium text-[var(--teal-950)]">Privacy</a>
+    <a href="https://play.google.com/store/apps/details?id=com.actifov1" target="_blank" rel="noopener" class="btn btn-primary mt-2 w-full">Get the app</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="pt-36 pb-20 md:pt-44 md:pb-28 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <div data-reveal>
+        <span class="hero-eyebrow">🪙 Social Detox, Gamified.</span>
+        <h1 class="mt-5 text-[2.6rem] leading-[1.05] md:text-6xl text-[var(--teal-950)]">
+          Your focus,<br>rewarded.
+        </h1>
+        <p class="mt-6 text-lg text-[#345C58] max-w-md">
+          Actifo tracks the time you spend on Instagram, YouTube and the rest, turns cutting back into challenges you can actually win, and pays you real coins for it.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="https://play.google.com/store/apps/details?id=com.actifov1" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.6c-.4.4-.6.9-.6 1.5v15.8c0 .6.2 1.1.6 1.5l.1.1L13 12.5v-.1L3.7 2.5l-.1.1z"/><path d="M16.1 15.6 13 12.5v-.1l3.1-3.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2z" opacity=".7"/><path d="M16.1 8.4 13 11.5 3.7 2.2c.4-.3.9-.3 1.5 0l10.9 6.2z" opacity=".85"/><path d="M16.1 15.6 5.2 21.8c-.6.3-1.1.3-1.5 0l9.3-9.3 3.1 3.1z" opacity=".55"/></svg>
+            Get it on Google Play
+          </a>
+          <button class="btn btn-disabled" aria-disabled="true" title="Actifo for iOS is on the way">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 1.6c.1 1.1-.3 2.1-1 2.9-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2.1 1-2.8.7-.8 1.9-1.4 2.8-1.4zM20 17c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.2-4 3.2-1.5 0-1.9-1-3.9-1s-2.5 1-4 1c-1.7 0-3-1.6-4-3-2.6-3.7-2.9-8.1-1.3-10.5 1.1-1.7 2.9-2.7 4.5-2.7 1.6 0 2.7 1.1 4 1.1 1.3 0 2.1-1.1 4-1.1 1.3 0 2.8.7 3.8 1.9-3.3 1.8-2.8 6.6.4 7.4z"/></svg>
+            Coming soon on iOS
+          </button>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="pt-24">
-        <!-- Hero Section -->
-        <section class="container mx-auto px-6 py-16 md:py-24">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <!-- Left Column: Text Content -->
-                <div class="text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-                        Activate Your Focus, <br class="hidden md:block"> <span class="text-brand-dark">Game On, Focus On.</span>
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Actifo helps you organize, track, and optimize your daily tasks and goals seamlessly. Take control of your productivity today.
-                    </p>
-                    <!-- Download Buttons -->
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="#" id="app-store-link">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" class="h-12">
-                        </a>
-                        <a href="#" id="play-store-link">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1200px-Google_Play_Store_badge_EN.svg.png" alt="Get it on Google Play" class="h-12">
-                        </a>
-                    </div>
-                </div>
-                <!-- Right Column: Image -->
-                <div class="flex justify-center">
-                    <img src="1 (1).jpg" alt="Actifo App Screenshot" class="max-w-xs md:max-w-sm rounded-2xl shadow-2xl hero-image-animation">
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="bg-white py-20 md:py-28">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">A Better Way to Stay Motivated</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mb-12">Here's how Actifo empowers you to achieve more.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <!-- Feature 1 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-                         <img src="7 (1).jpg" alt="My Challenges Feature" class="rounded-lg shadow-md mb-6 w-full">
-                        <h3 class="text-xl font-semibold mb-2">Engaging Challenges</h3>
-                        <p class="text-gray-500">Participate in social and fitness challenges to stay motivated and earn rewards.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-                        <img src="5.jpg" alt="Analytics Feature" class="rounded-lg shadow-md mb-6 w-full">
-                        <h3 class="text-xl font-semibold mb-2">Track Your Usage</h3>
-                        <p class="text-gray-500">Get detailed analytics on your screen time to build better digital habits.</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-                        <img src="8 (1).jpg" alt="Leaderboard Feature" class="rounded-lg shadow-md mb-6 w-full">
-                        <h3 class="text-xl font-semibold mb-2">Compete on Leaderboards</h3>
-                        <p class="text-gray-500">Compete with friends, climb the ranks, and see where you stand.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- More features can go here -->
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-brand-dark text-white" id="download">
-        <div class="container mx-auto px-6 py-8">
-             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-4 md:mb-0">
-                    <p class="text-lg font-semibold">Actifo</p>
-                    <p class="text-sm text-gray-400">&copy; 2025 Actifo. All Rights Reserved.</p>
-                </div>
-                <div class="flex items-center space-x-6">
-                    <a href="about.html" class="text-gray-300 hover:text-white">About Us</a>
-                    <a href="privacy.html" class="text-gray-300 hover:text-white">Privacy Policy</a>
-                    <a href="contact.html" class="text-gray-300 hover:text-white">Contact Us</a>
-                </div>
-            </div>
+        <div class="trust-strip mt-6 flex flex-wrap gap-x-5 gap-y-2">
+          <span>🔒 Encrypted, always</span>
+          <span>🚫 Never sold to anyone</span>
+          <span>🗑️ Delete your data, anytime</span>
         </div>
-    </footer>
+      </div>
 
-    <script>
-        // App Redirect Logic
-        (function() {
-            // Configuration
-            const BASE_URL_SCHEME = 'actifo:/'; // NOTE the single slash
-            const IOS_APP_STORE_LINK = 'https://apps.apple.com/app/your-app-id'; 
-            const ANDROID_PLAY_STORE_LINK = 'https://play.google.com/store/apps/details?id=com.actifo.app';
+      <div class="hero-visual-wrap">
+        <div class="hero-glow"></div>
+        <div class="device-frame">
+          <img src="assets/home-screen.png" alt="Actifo home screen showing your coin balance and Instagram, Physics Wallah and YouTube challenges you can join">
+        </div>
+        <div class="coin-chip" style="top:6%; right:0%;"><img src="assets/coin.png" alt="">Earn while you unplug</div>
+        <div class="coin-chip" style="bottom:12%; left:-4%;"><img src="assets/coin.png" alt="">Compete. Win. Redeem.</div>
+      </div>
+    </div>
+  </section>
 
-            // *** NEW: Get the path from the URL, like /qc/GdJWL4T7xKYQ ***
-            const path = window.location.pathname;
-            const fullAppUrl = BASE_URL_SCHEME + path;
+  <!-- ============ THE IDEA + LOOP ============ -->
+  <section id="story" class="py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center" data-reveal>
+      <span class="eyebrow text-[var(--teal-700)]">The idea</span>
+      <h2 class="mt-4 text-3xl md:text-[2.6rem] text-[var(--teal-950)]">Screen time isn't the enemy.<br class="hidden md:block"> Mindless scrolling is.</h2>
+      <p class="mt-6 text-[#345C58] text-lg leading-relaxed">
+        In a world of endless scrolling, Actifo helps you build a healthier relationship with technology — not by shutting you out, but by turning awareness into action. It's the same loop, every day.
+      </p>
+    </div>
 
-            function getOS() {
-                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-                if (/android/i.test(userAgent)) return "Android";
-                if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) return "iOS";
-                return "unknown";
-            }
+    <div class="mt-20" data-reveal>
+      <div class="loop-wrap" id="loopWrap">
+        <div class="loop-ring"></div>
+        <img src="assets/coin.png" alt="" class="loop-center">
 
-            function redirectToStore(os) {
-                if (os === "iOS") {
-                    window.location.href = IOS_APP_STORE_LINK;
-                } else if (os === "Android") {
-                    window.location.href = ANDROID_PLAY_STORE_LINK;
-                }
-            }
+        <div class="loop-node n1 is-active">
+          <button type="button" class="dot" aria-pressed="true">📊</button>
+          <h3>Track</h3>
+          <p>See exactly where your time goes, app by app, day by day.</p>
+        </div>
+        <div class="loop-node n2">
+          <button type="button" class="dot" aria-pressed="false">🏆</button>
+          <h3>Challenge</h3>
+          <p>Join Instagram, YouTube, Cult Fit or PhysicsWallah challenges and climb a real leaderboard.</p>
+        </div>
+        <div class="loop-node n3">
+          <button type="button" class="dot" aria-pressed="false">🪙</button>
+          <h3>Earn</h3>
+          <p>Wins, mystery boxes and QuickCompare battles all add coins to your wallet.</p>
+        </div>
+        <div class="loop-node n4">
+          <button type="button" class="dot" aria-pressed="false">🎁</button>
+          <h3>Redeem</h3>
+          <p>Turn coins into real rewards from the Reward Store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            function openAppOrRedirect() {
-                const os = getOS();
-                if (os === "unknown") return;
-                
-                // *** NEW: Immediately try to open the deep link if on mobile ***
-                if (os === 'iOS' || os === 'Android') {
-                    window.location.href = fullAppUrl;
-                }
+  <!-- ============ REWARDS ============ -->
+  <section id="rewards" class="rewards-band py-24">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+      <div data-reveal>
+        <span class="eyebrow" style="color:var(--gold-300);">The Reward Store</span>
+        <h2 class="mt-4 text-3xl md:text-[2.6rem] text-white">Coins that turn into<br>real payouts.</h2>
+        <p class="mt-5 text-[#CFE7E3] text-lg max-w-md">
+          Every challenge you win, mystery box you open, and QuickCompare battle you take against a friend adds coins to your wallet. Spend them across dozens of brands, whenever you're ready.
+        </p>
+        <div class="mt-8 space-y-4">
+          <div class="voucher-card">
+            <div>
+              <p class="voucher-brand">Amazon</p>
+              <p class="text-sm text-[#5F7C77]">Shopping</p>
+            </div>
+            <div class="text-right">
+              <p class="voucher-amt">Save 5%</p>
+              <p class="text-xs text-[#5F7C77] mt-0.5">Redeem now →</p>
+            </div>
+          </div>
+          <div class="voucher-card">
+            <div>
+              <p class="voucher-brand">Myntra</p>
+              <p class="text-sm text-[#5F7C77]">Fashion</p>
+            </div>
+            <div class="text-right">
+              <p class="voucher-amt">Save 5%</p>
+              <p class="text-xs text-[#5F7C77] mt-0.5">Redeem now →</p>
+            </div>
+          </div>
+          <div class="voucher-card">
+            <div>
+              <p class="voucher-brand">Swiggy</p>
+              <p class="text-sm text-[#5F7C77]">Food delivery</p>
+            </div>
+            <div class="text-right">
+              <p class="voucher-amt">Save 3%</p>
+              <p class="text-xs text-[#5F7C77] mt-0.5">Redeem now →</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center" data-reveal>
+        <div class="device-frame">
+          <img src="assets/store-screen.png" alt="Actifo Reward Store showing dozens of partner brands including IKEA, Amazon, Zomato, Flipkart, Myntra and Swiggy, each redeemable for coin savings">
+        </div>
+      </div>
+    </div>
 
-                setTimeout(function() {
-                    // If the user is still on this page after a short delay, redirect to the store.
-                    if (!document.hidden && !document.webkitHidden) {
-                         redirectToStore(os);
-                    }
-                }, 2500); // 2.5 second delay
-            }
-            
-            // For root domain, trigger immediately on page load
-             if (path === '/' || path === '/index.html') {
-                openAppOrRedirect();
-             }
-            
-            // Also trigger on button clicks
-            document.getElementById('app-store-link').addEventListener('click', (e) => { e.preventDefault(); openAppOrRedirect(); });
-            document.getElementById('play-store-link').addEventListener('click', (e) => { e.preventDefault(); openAppOrRedirect(); });
-        })();
-    </script>
+    <div class="marquee mt-16 border-t border-b border-[var(--line-dark)] py-5">
+      <div class="marquee-track">
+        <span class="marquee-item">IKEA</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Amazon</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Zomato</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Flipkart</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Myntra</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Swiggy</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Nykaa</span><span class="marquee-item">·</span>
+        <span class="marquee-item">more brands added regularly</span><span class="marquee-item">·</span>
+        <span class="marquee-item">IKEA</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Amazon</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Zomato</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Flipkart</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Myntra</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Swiggy</span><span class="marquee-item">·</span>
+        <span class="marquee-item">Nykaa</span><span class="marquee-item">·</span>
+        <span class="marquee-item">more brands added regularly</span><span class="marquee-item">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRIVACY ============ -->
+  <section id="privacy" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto quiet-panel p-8 md:p-14" data-reveal>
+      <span class="eyebrow text-[var(--teal-700)]">Privacy &amp; security</span>
+      <h2 class="mt-4 text-3xl md:text-4xl text-[var(--teal-950)]">Your habits are yours. Period.</h2>
+      <p class="mt-5 text-[#345C58] max-w-2xl">
+        We built Actifo to help you build better habits, not to build a profile on you. Here's exactly what that means.
+      </p>
+      <div class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+        <div class="privacy-item">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <div><h3 class="font-semibold text-[var(--teal-950)]">Only what's needed</h3><p class="text-sm text-[#4C6B67] mt-1">App usage stats and basic account info — never your messages, photos, contacts or browsing history.</p></div>
+        </div>
+        <div class="privacy-item">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4Z"/></svg></div>
+          <div><h3 class="font-semibold text-[var(--teal-950)]">Encrypted, always</h3><p class="text-sm text-[#4C6B67] mt-1">Stored securely in Google Cloud with industry-standard encryption, in transit and at rest.</p></div>
+        </div>
+        <div class="privacy-item">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <div><h3 class="font-semibold text-[var(--teal-950)]">Yours alone</h3><p class="text-sm text-[#4C6B67] mt-1">Every account can only ever access its own data. Nobody else's, ever.</p></div>
+        </div>
+        <div class="privacy-item">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2m3 0-1 14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1L5 6"/></svg></div>
+          <div><h3 class="font-semibold text-[var(--teal-950)]">Deletable, on request</h3><p class="text-sm text-[#4C6B67] mt-1">Pause tracking anytime in-app, or email us to delete your data outright.</p></div>
+        </div>
+      </div>
+      <a href="privacy.html" class="inline-flex items-center gap-1.5 mt-10 font-semibold text-[var(--teal-700)] hover:text-[var(--teal-950)]">
+        Read the full privacy policy
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section id="download" class="py-24 px-6 text-center">
+    <div class="max-w-xl mx-auto" data-reveal>
+      <h2 class="text-3xl md:text-[2.6rem] text-[var(--teal-950)]">Ready to focus?</h2>
+      <p class="mt-4 text-[#345C58] text-lg">Free to join. Coins are waiting.</p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="https://play.google.com/store/apps/details?id=com.actifov1" target="_blank" rel="noopener" class="btn btn-gold">Get it on Google Play</a>
+        <button class="btn btn-disabled" aria-disabled="true" title="Actifo for iOS is on the way">Coming soon on iOS</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[var(--teal-950)] text-white pt-16 pb-8 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-[1.4fr,1fr,1fr] gap-10">
+    <div>
+      <div class="flex items-center gap-2">
+        <img src="assets/coin.png" alt="" class="h-8 w-8">
+        <span class="logo-word text-white">actifo</span>
+      </div>
+      <p class="mt-3 text-sm text-[#BFE0DC] max-w-xs">Social Detox, Gamified. Turn your focus into your greatest asset.</p>
+    </div>
+    <div>
+      <p class="eyebrow text-[#8FC2BC] mb-3">Company</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow text-[#8FC2BC] mb-3">Get in touch</p>
+      <a href="mailto:socialdetox.foundation@gmail.com" class="text-sm">socialdetox.foundation@gmail.com</a>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-[var(--line-dark)] text-xs text-[#7FA9A3]">
+    &copy; 2026 Actifo. All rights reserved.
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
 
 </body>
 </html>
