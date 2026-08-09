@@ -1,0 +1,29 @@
+# Reference nginx server block for actifo.com — static site.
+# Copy the repo's contents to something like /var/www/actifo-website on the VM,
+# adjust `root` below, then include this in your nginx sites-enabled config.
+# Not wired up to any server yet — this is just what Phase 2 (OCI + nginx) will need.
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name actifo.com www.actifo.com;
+
+    root /var/www/actifo-website;
+    index index.html;
+
+    # QuickCompare invite links: actifo.com/qc/<token> — any token, always serves qc.html.
+    # (On Android with the app installed, App Links intercept the tap before this is ever hit.)
+    location ~ ^/qc/ {
+        try_files /qc.html =404;
+    }
+
+    # Everything else: serve the matching file, or fall back to the custom 404 page.
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /404.html;
+
+    # Once TLS is set up (e.g. via certbot), redirect http -> https and terminate SSL
+    # in a second `listen 443 ssl;` server block using the same `root`/`location` rules.
+}
