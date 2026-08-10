@@ -214,6 +214,28 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
 .prose-quiet a{color:var(--teal-700); text-decoration:underline; text-underline-offset:2px;}
 .prose-quiet a:hover{color:var(--teal-950);}
 
+/* ---------- FAQ ---------- */
+.faq-item{
+  border-bottom:1px solid var(--line);
+  padding:1.3rem 0;
+}
+.faq-item:first-child{padding-top:0;}
+.faq-item:last-child{border-bottom:none; padding-bottom:0;}
+.faq-item summary{
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  cursor:pointer; list-style:none;
+  font-family:'Fredoka',sans-serif; font-weight:600; font-size:1.05rem; color:var(--teal-950);
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary .faq-icon{
+  flex-shrink:0; width:26px; height:26px; border-radius:999px; background:var(--mint-100);
+  display:flex; align-items:center; justify-content:center; color:var(--teal-800);
+  transition:transform .25s ease, background .25s ease, color .25s ease;
+}
+.faq-item[open] summary .faq-icon{transform:rotate(45deg); background:var(--gold-500); color:#fff;}
+.faq-item p{margin-top:.8rem; color:#4C6B67; line-height:1.65; padding-right:2.2rem;}
+.faq-item[open] summary{color:var(--teal-800);}
+
 /* ---------- Footer ---------- */
 footer a{color:#BFE0DC;}
 footer a:hover{color:#fff;}
