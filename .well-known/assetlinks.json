@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.actifov1",
+      "sha256_cert_fingerprints": [
+        "DE:36:9A:92:47:6C:78:21:BB:DE:2D:92:CF:30:51:21:CE:47:6A:7F:05:5E:98:62:D8:08:CC:F9:C1:BD:C1:13"
+      ]
+    }
+  }
+]
